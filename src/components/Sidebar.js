@@ -1,7 +1,6 @@
 import React from "react";
 
 function Sidebar({ onLogout, activePage, setActivePage, userRole }) {
-  // Sidebar items based on user's role
   const menuItems =
     userRole === "manager"
       ? [
@@ -18,7 +17,7 @@ function Sidebar({ onLogout, activePage, setActivePage, userRole }) {
 
   return (
     <div style={{ display: "flex" }}>
-      {/* Left Icon Bar (Small) */}
+      {}
       <div style={styles.smallMenu}>
         {menuItems.map((item) => (
           <div
@@ -35,7 +34,7 @@ function Sidebar({ onLogout, activePage, setActivePage, userRole }) {
           </div>
         ))}
 
-        {/* 🚪 Logout Icon */}
+        {}
         <div
           title="Logout"
           onClick={onLogout}
@@ -51,7 +50,7 @@ function Sidebar({ onLogout, activePage, setActivePage, userRole }) {
         </div>
       </div>
 
-      {/* Right Sidebar with Labels */}
+      {}
       <div style={styles.sidebar}>
         <div style={styles.logo}>EmployeeMS</div>
 
@@ -70,7 +69,7 @@ function Sidebar({ onLogout, activePage, setActivePage, userRole }) {
           </div>
         ))}
 
-        {/* 🚪 Logout Button */}
+        {}
         <div
           onClick={onLogout}
           style={{
