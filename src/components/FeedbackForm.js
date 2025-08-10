@@ -50,7 +50,6 @@ function FeedbackForm({ onSubmit, userRole, userData, feedbacks, onResolve }) {
     setTimeout(() => setSubmitted(false), 2500);
   };
 
-  // 👨‍💼 Manager View — see all feedbacks
   if (userRole === 'manager') {
     return (
       <div>
@@ -94,7 +93,6 @@ function FeedbackForm({ onSubmit, userRole, userData, feedbacks, onResolve }) {
     );
   }
 
-  // 👤 Employee View — submit form
   return (
     <div style={styles.card}>
       <h2 style={styles.heading}>💬 Submit Complaint / Feedback</h2>
@@ -103,7 +101,7 @@ function FeedbackForm({ onSubmit, userRole, userData, feedbacks, onResolve }) {
       )}
 
       <form onSubmit={handleSubmit}>
-        {/* Name */}
+        {}
         <div style={styles.field}>
           <label style={styles.label}>Name</label>
           <input
@@ -120,7 +118,7 @@ function FeedbackForm({ onSubmit, userRole, userData, feedbacks, onResolve }) {
           {errors.name && <small style={styles.error}>{errors.name}</small>}
         </div>
 
-        {/* Email */}
+        {}
         <div style={styles.field}>
           <label style={styles.label}>Email</label>
           <input
@@ -137,7 +135,7 @@ function FeedbackForm({ onSubmit, userRole, userData, feedbacks, onResolve }) {
           {errors.email && <small style={styles.error}>{errors.email}</small>}
         </div>
 
-        {/* Message */}
+        {}
         <div style={styles.field}>
           <label style={styles.label}>Message</label>
           <textarea
@@ -160,7 +158,6 @@ function FeedbackForm({ onSubmit, userRole, userData, feedbacks, onResolve }) {
   );
 }
 
-// ✅ Styles
 const styles = {
   card: {
     background: '#fff',
