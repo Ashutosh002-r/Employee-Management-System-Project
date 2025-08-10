@@ -19,7 +19,6 @@ function App() {
   const [activePage, setActivePage] = useState('Dashboard');
   const [loggedInEmployee, setLoggedInEmployee] = useState(null);
 
-  // 🔁 Load saved session/data from localStorage
   useEffect(() => {
     const getData = (key, fallback = null) =>
       JSON.parse(localStorage.getItem(key)) || fallback;
@@ -33,7 +32,6 @@ function App() {
     setIsLoggedIn(localStorage.getItem('isLoggedIn') === 'true');
   }, []);
 
-  // 💾 Save updates to localStorage
   useEffect(() => {
     localStorage.setItem('employees', JSON.stringify(employees));
   }, [employees]);
@@ -63,7 +61,6 @@ function App() {
     localStorage.setItem('activePage', activePage);
   }, [activePage]);
 
-  // ✅ Login handler
   const handleLogin = (user) => {
     if (user.role === 'manager') {
       setUserRole('manager');
@@ -74,7 +71,6 @@ function App() {
     setIsLoggedIn(true);
   };
 
-  // ✅ Logout handler
   const handleLogout = () => {
     setIsLoggedIn(false);
     setUserRole(null);
@@ -88,7 +84,6 @@ function App() {
     localStorage.removeItem('isLoggedIn');
   };
 
-  // 👥 Employee management
   const addEmployee = (emp) => {
     setEmployees((prev) => [...prev, emp]);
   };
@@ -101,7 +96,6 @@ function App() {
     );
     setEditingEmployee(null);
 
-    // update profile if employee edits themself
     if (loggedInEmployee?.email === updatedEmp.email) {
       setLoggedInEmployee(updatedEmp);
     }
@@ -117,7 +111,6 @@ function App() {
     setActivePage('Manage Employees');
   };
 
-  // 💬 Complaint/Feedback management
   const handleFeedbackSubmit = (feedback) => {
     setFeedbacks((prev) => [...prev, feedback]);
   };
@@ -130,7 +123,6 @@ function App() {
     );
   };
 
-  // 🔓 Show login screen
   if (!isLoggedIn) {
     return <Login onLogin={handleLogin} employees={employees} />;
   }
