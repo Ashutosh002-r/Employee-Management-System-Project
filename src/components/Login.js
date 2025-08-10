@@ -29,7 +29,6 @@ function Login({ onLogin, employees }) {
       return;
     }
 
-    // Employee login (case-insensitive)
     const emp = employees.find(
       (emp) => emp.email.toLowerCase() === email.trim().toLowerCase()
     );
